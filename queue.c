@@ -16,6 +16,30 @@ struct node *HEAD = NULL;
 struct node *TAIL = NULL;
 
 
+struct node *peek(){
+
+    if(HEAD == NULL){
+        printf("\nNo nodes to peek\n");
+        return NULL;
+    }
+    else{
+        return HEAD;
+    }
+
+}
+
+int isEmpty(){
+
+    if(HEAD == NULL){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+
+}
+
+
 void dequeue(){
 
     struct node *newNode = HEAD;
@@ -35,10 +59,18 @@ void enqueue(int value){
 
     struct node *newNode = (struct node *)malloc(sizeof(struct node));
     newNode->value = value;
-    TAIL->next = newNode;
-    newNode->previous = TAIL;
-    newNode->next = NULL;
-    TAIL = newNode;
+    if(HEAD == NULL || TAIL == NULL){
+        newNode->next = NULL;
+        newNode->previous = NULL;
+        HEAD = newNode;
+        TAIL = newNode;
+    }
+    else{
+        TAIL->next = newNode;
+        newNode->previous = TAIL;
+        newNode->next = NULL;
+        TAIL = newNode;
+    }
 
 }
 
