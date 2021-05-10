@@ -42,6 +42,22 @@ void enqueue(int value){
 
 }
 
+void printQueue(){
+
+    struct node *currNode = HEAD;
+    int nodeNum = 0;
+    if(HEAD == NULL){
+        printf("\nNo nodes available to print in queue\n");
+    }
+    else{
+        while(currNode != NULL){
+            printf("\nNODE %d : %d\n",nodeNum++,currNode->value);
+            currNode = currNode->next;
+        }
+    }
+
+}
+
 
 
 int main(void){
