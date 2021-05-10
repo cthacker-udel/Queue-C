@@ -66,7 +66,28 @@ void printMenu(){
 
 int main(void){
 
+    int choice;
+    int nodeval;
+    while(1){
+        printMenu();
+        scanf("%d",&choice);
+        switch(choice){
 
+            case 1:
+                printQueue();
+                break;
+            case 2:
+                printf("\nEnter a node value to enqueue\n");
+                scanf("%d",&nodeval);
+                enqueue(nodeval);
+                break;
+            case 3:
+                dequeue();
+                break;
+            default:
+                return 0;
+        }
+    }
 
     return 0;
 
