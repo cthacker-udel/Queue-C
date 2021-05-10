@@ -58,7 +58,11 @@ void printQueue(){
 
 }
 
+void printMenu(){
 
+    printf("\n\n~=~=~=MENU~=~=~=\n1)Print queue\n2)Enqueue\n3)Dequeue\n4)Exit program");
+
+}
 
 int main(void){
 
